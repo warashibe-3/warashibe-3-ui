@@ -1,27 +1,26 @@
-import { Avatar, Grid, Text, Spacer } from "@nextui-org/react";
+import { User, Grid, Text, Spacer } from "@nextui-org/react";
 
 import { RatingStar } from "src/components/RatingStar/ratingstar";
 
-export const ReviewCard = ({profile, user}: {profile: string, user: string}) => {
+import styles from './reviewcard.module.css'
+
+export const ReviewCard = ({ profile, username }: { profile: string, username: string }) => {
   return (
     <Grid.Container gap={0}>
-      <Grid xs={4}>
-        <Grid direction="column">
-          <Grid>
-            <Avatar
-              src={profile}
-              css={{ size: "$20" }}
-            />
-          </Grid>
-          <Grid>
-            <Text h2 size={16} css={{width: "stretch", textAlign: "center"}}>{user}</Text>
-          </Grid>
+      <Grid xs={12}>
+        <Grid>
+          <User
+            src={profile}
+            size="xl"
+            className={styles.profile}
+            name={username}
+          />
         </Grid>
       </Grid>
-      <Grid xs={8}>
-        <RatingStar/>
+      <Grid className={styles.stars}>
+        <RatingStar />
       </Grid>
-      <Spacer y={0.8} />
+      <Spacer y={3} />
     </Grid.Container>
   );
 };

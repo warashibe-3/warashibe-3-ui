@@ -1,15 +1,16 @@
 import Router from 'next/router'
-import { Grid, Spacer } from "@nextui-org/react"
-
-import { BaseLayout as Layout } from "src/components/BaseLayout/baselayout";
-import { TaskUserCard } from "src/components/TaskUserCard/taskusercard";
-import { RockButton } from "src/components/RockButton/rockbutton";
+import { Spacer } from "@nextui-org/react"
 import {
   faCalendarCheck, faMoneyBill1
 } from '@fortawesome/free-regular-svg-icons'
 import {
   faCalendarDays, faBagShopping
 } from '@fortawesome/free-solid-svg-icons'
+
+import { BaseLayout as Layout } from "src/components/BaseLayout/baselayout";
+import { TaskUserCard } from "src/components/TaskUserCard/taskusercard";
+import { RockButton } from "src/components/RockButton/rockbutton";
+
 
 // stub data
 const userTaskList = [
