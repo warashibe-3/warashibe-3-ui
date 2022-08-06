@@ -12,12 +12,6 @@
     "test": "jest",
     "test-all": "yarn lint && yarn type-check && yarn test"
   },
-  "lint-staged": {
-    "*.@(ts|tsx)": [
-      "yarn lint",
-      "yarn format"
-    ]
-  },
   "babel": {
     "presets": [
       "next/babel"
@@ -31,7 +25,13 @@
     "next": "12.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "sass": "1.54.3"
+    "sass": "1.54.3",
+    "@fortawesome/fontawesome-svg-core": "6.1.2",
+    "@fortawesome/free-brands-svg-icons": "6.1.2",
+    "@fortawesome/free-solid-svg-icons": "6.1.2",
+    "@fortawesome/react-fontawesome": "0.2.0",
+    "@iconify/icons-bi": "1.2.7",
+    "@iconify/react": "3.2.2"
   },
   "devDependencies": {
     "@testing-library/react": "13.3.0",

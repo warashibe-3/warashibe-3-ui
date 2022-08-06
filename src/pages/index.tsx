@@ -1,6 +1,7 @@
+import { Container } from "@nextui-org/react";
 import Head from "next/head";
 import { Layout } from "src/components/Layout/layout";
-import { Container, Text } from "@nextui-org/react";
+import { PageNav } from "src/components/PageNav/pagenav";
 
 const Home = () => {
   return (
@@ -10,7 +11,12 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container>
-        <Text h2>Hello Next.js</Text>
+        <PageNav
+          prevRoute={{
+            title: "Back",
+            href: "/prev",
+          }}
+        />
       </Container>
     </Layout>
   );
