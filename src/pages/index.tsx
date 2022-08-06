@@ -8,7 +8,7 @@ const Home = () => {
         <title>Home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h2>Home</h2>
+      <h2>Home Home</h2>
       <button
         onClick={() => {
           window.alert("Hello, World!");
