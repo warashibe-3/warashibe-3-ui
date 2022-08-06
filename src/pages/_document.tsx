@@ -1,5 +1,6 @@
 import type { DocumentContext, DocumentInitialProps } from "next/document";
 import Document, { Head, Html, Main, NextScript } from "next/document";
+import { CssBaseline } from '@nextui-org/react';
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
@@ -10,7 +11,7 @@ class MyDocument extends Document {
     return (
       <Html lang="ja">
         <Head>
-          <meta name="description" content="Hello, World!" />
+          {CssBaseline.flush()}
         </Head>
         <body>
           <Main />

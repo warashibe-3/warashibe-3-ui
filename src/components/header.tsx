@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Text } from "@nextui-org/react";
 
 const items = [
   { href: "/", label: "Home" },
@@ -8,7 +9,7 @@ const items = [
 export const Header = () => {
   return (
     <header>
-      <h1>Title</h1>
+      <Text h2>Title</Text>
       <nav>
         {items.map(({ href, label }) => {
           return (
