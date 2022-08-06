@@ -1,9 +1,10 @@
 import { Container } from "@nextui-org/react";
 import Head from "next/head";
 import type { ReactNode } from "react";
+import type { Route } from "src/types/Route";
+
 import { Header } from "src/components/Header/header";
 import { PageNav } from "src/components/PageNav/pagenav";
-import type { Route } from "src/types/Route";
 
 export const BaseLayout: React.FC<{
   children: ReactNode;
@@ -18,10 +19,10 @@ export const BaseLayout: React.FC<{
         <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Container sm>
+      <Container xs css={{ minHeight: "100vh" }}>
         {prevRoute ? <PageNav prevRoute={prevRoute} /> : <span />}
         <Header title={pageTitle} subRoute={subRoute || null} />
-        <main>{children}</main>
+        {children}
       </Container>
     </>
   );
