@@ -1,4 +1,5 @@
 import { Button, Grid } from "@nextui-org/react";
+import Link from "next/link";
 import { EventCard } from "src/components/EventCard/eventcard";
 import { Layout } from "src/components/Layout/layout";
 
@@ -32,14 +33,18 @@ const EventPage = () => {
       })}
       <Grid.Container gap={2} justify="center" direction="column" alignItems="center">
         <Grid>
-          <Button bordered color="primary" auto ghost size="xl" flat>
-            Insert Event Code
-          </Button>
+          <Link href="/event/join">
+            <Button bordered color="primary" auto ghost size="xl" flat>
+              Insert Event Code
+            </Button>
+          </Link>
         </Grid>
         <Grid>
-          <Button bordered color="primary" auto ghost size="xl" flat>
-            Create New Event
-          </Button>
+          <Link href="/event/new">
+            <Button bordered color="primary" auto ghost size="xl" flat>
+              Create New Event
+            </Button>
+          </Link>
         </Grid>
       </Grid.Container>
     </Layout>
