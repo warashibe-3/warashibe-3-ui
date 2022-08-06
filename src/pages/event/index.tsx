@@ -1,4 +1,4 @@
-import { Button, Col, Grid, Row, Spacer } from "@nextui-org/react";
+import { Button, Grid } from "@nextui-org/react";
 import { EventCard } from "src/components/EventCard/eventcard";
 import { Layout } from "src/components/Layout/layout";
 
