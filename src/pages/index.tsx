@@ -12,10 +12,11 @@ const Home = () => {
       </Head>
       <Container>
         <PageNav
-          prevRoute={{ 
+          prevRoute={{
             title: "Back",
-            href: "/prev"
-          }}/>
+            href: "/prev",
+          }}
+        />
       </Container>
     </Layout>
   );
