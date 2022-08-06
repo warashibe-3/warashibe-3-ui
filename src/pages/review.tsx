@@ -3,7 +3,7 @@ import { Spacer } from "@nextui-org/react"
 
 import { BaseLayout as Layout } from "src/components/BaseLayout/baselayout";
 import { ReviewCard } from "src/components/ReviewCard/reviewcard";
-import { RockButton } from "src/components/RockButton/rockbutton"
+import { RockButton } from "src/components/RockButton/rockbutton";
 
 // stub data
 const userList = [
