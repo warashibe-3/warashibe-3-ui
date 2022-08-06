@@ -111,31 +111,24 @@ const NewEvent = () => {
             <TitleInput update={updateEventTitle} />
           </Grid>
           <Grid>
-            {
-              event.person && event.title
-                ? <Button
-                    bordered
-                    color="secondary"
-                    ghost
-                    size="xl"
-                    flat
-                    onClick={() => {
-                      return router.push("/event");
-                    }}
-                  >
-                    Finish
-                  </Button>
-                : <Button
-                    bordered
-                    color="secondary"
-                    ghost
-                    size="xl"
-                    flat
-                    disabled
-                  >
-                    Finish
-                  </Button>
-            }
+            {event.person && event.title ? (
+              <Button
+                bordered
+                color="secondary"
+                ghost
+                size="xl"
+                flat
+                onClick={() => {
+                  return router.push("/event");
+                }}
+              >
+                Finish
+              </Button>
+            ) : (
+              <Button bordered color="secondary" ghost size="xl" flat disabled>
+                Finish
+              </Button>
+            )}
           </Grid>
         </Grid.Container>
       )}
