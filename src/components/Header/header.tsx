@@ -1,4 +1,5 @@
 import { Text } from "@nextui-org/react";
+
 import styles from "./header.module.css";
 
 export const Header = () => {

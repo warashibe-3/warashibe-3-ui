@@ -1,7 +1,7 @@
-import * as React from "react";
-import NextLink from "next/link";
-import { useTheme, styled, Container, Link } from "@nextui-org/react";
 import { Icon } from "@iconify/react";
+import { Container } from "@nextui-org/react";
+import NextLink from "next/link";
+
 import styles from "./pagenav.module.scss";
 
 export interface Route {
@@ -10,11 +10,10 @@ export interface Route {
 }
 
 export interface PageNavProps {
-  prevRoute?: Route;
-  nextRoute?: Route;
+  prevRoute: Route;
 }
 
-export const PageNav: React.FC<PageNavProps> = ({ prevRoute, nextRoute }) => {
+export const PageNav: React.FC<PageNavProps> = ({ prevRoute }) => {
   return (
     <Container display="flex" justify="space-between" css={{ py: "12%" }} gap={0}>
       {prevRoute ? (

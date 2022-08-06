@@ -1,6 +1,6 @@
+import { Container } from "@nextui-org/react";
 import Head from "next/head";
 import { Layout } from "src/components/Layout/layout";
-import { Container, Text } from "@nextui-org/react";
 import { PageNav } from "src/components/PageNav/pagenav";
 
 const Home = () => {
