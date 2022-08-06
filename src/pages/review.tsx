@@ -1,4 +1,4 @@
-import { Layout } from "src/components/Layout/layout";
+import { BaseLayout as Layout } from "src/components/BaseLayout/baselayout";
 import { ReviewCard } from "src/components/ReviewCard/reviewcard";
 
 // stub data
@@ -23,15 +23,14 @@ const userList = [
 
 const ReviewPage = () => {
   return (
-    <Layout title="Review">
+    <Layout title="Review" pageTitle="Review">
       {
         userList.map(
           (user, index) => {
-            return <ReviewCard user={user.name} profile={user.profile} key={index}/>
+            return <ReviewCard user={user.name} profile={user.profile} key={index} />
           }
         )
       }
-      {/* <ReviewCard profile="https://i.pravatar.cc/150?u=a04258114e29026702d"/> */}
     </Layout>
   )
 };
