@@ -11,14 +11,10 @@ const Home = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Container>
-        <PageNav 
+        <PageNav
           prevRoute={{ 
-            title: "Previous",
-            href: "/"
-          }}
-          nextRoute={{
-            title: "Next",
-            href: "/"
+            title: "Back",
+            href: "/prev"
           }}/>
       </Container>
     </Layout>
