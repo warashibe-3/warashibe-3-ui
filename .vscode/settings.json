@@ -1,18 +1,17 @@
 {
-  "typescript.tsdk": "node_modules/typescript/lib",
-  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "path-autocomplete.pathMappings": {
+    "@": "${folder}/src"
+  },
+  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true
   },
-  "eslint.validate": ["json", "javascript", "javascriptreact", "typescript", "typescriptreact"],
-  "editor.formatOnSave": false,
-  "[css]": {
-    "editor.formatOnSave": true
+  "editor.quickSuggestions": {
+    "strings": true
   },
-  "[scss]": {
-    "editor.formatOnSave": true
-  },
-  "[markdown]": {
-    "editor.formatOnSave": true
-  }
+  "stylelint.validate": ["css", "scss"],
+  "scss.validate": false,
+  "css.validate": false,
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.validate": true
 }
