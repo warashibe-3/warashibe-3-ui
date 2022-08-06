@@ -5,15 +5,15 @@ import { Layout } from "src/components/Layout/layout";
 const eventList = [
   {
     title: "Sunday Evening BBQ",
-    isCompleted: true,
+    isCompleted: false,
   },
   {
     title: "Golden Week Karaoke",
-    isCompleted: false,
+    isCompleted: true,
   },
   {
     title: "Obon River Side BBQ",
-    isCompleted: false,
+    isCompleted: true,
   },
 ];
 
