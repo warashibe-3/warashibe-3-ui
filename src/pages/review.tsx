@@ -31,7 +31,13 @@ const ReviewPage = () => {
       {
         userList.map(
           (user, index) => {
-            return <ReviewCard user={user.name} profile={user.profile} key={index} />
+            return (
+              <ReviewCard
+                username={user.name}
+                profile={user.profile}
+                key={index}
+              />
+            )
           }
         )
       }
@@ -44,6 +50,7 @@ const ReviewPage = () => {
           }
         }
       />
+      <Spacer y={2} />
     </Layout>
   )
 };

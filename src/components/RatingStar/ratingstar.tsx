@@ -10,7 +10,7 @@ import styles from './ratingstar.module.css'
 export const RatingStar = () => {
   const [rating, setRating] = useState(0);
   return (
-    <div>
+    <>
       {[...Array(5)].map((star, index) => {
         index += 1;
         return (
@@ -20,13 +20,10 @@ export const RatingStar = () => {
             className={styles.button}
             onClick={() => setRating(index)}
           >
-            <Text h1 size={18} css={{ m: 10 }}>
-              {index}
-            </Text>
-            <FontAwesomeIcon icon={index <= (rating) ? faFullStar : faStar} />
+            <FontAwesomeIcon icon={index <= (rating) ? faFullStar : faStar} size="2x" />
           </button>
         );
       })}
-    </div>
+    </>
   );
 };
