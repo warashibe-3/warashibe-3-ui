@@ -1,5 +1,6 @@
 import Head from "next/head";
-import { Layout } from "src/components/layout";
+import { Layout } from "src/components/Layout/layout";
+import { Container, Text } from "@nextui-org/react";
 
 const Home = () => {
   return (
@@ -8,14 +9,9 @@ const Home = () => {
         <title>Home</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h2>Home</h2>
-      <button
-        onClick={() => {
-          window.alert("Hello, World!");
-        }}
-      >
-        Button
-      </button>
+      <Container>
+        <Text h2>Hello Next.js</Text>
+      </Container>
     </Layout>
   );
 };
