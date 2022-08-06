@@ -1,3 +1,4 @@
+import Router from 'next/router'
 import { Spacer } from "@nextui-org/react"
 
 import { BaseLayout as Layout } from "src/components/BaseLayout/baselayout";
@@ -35,7 +36,14 @@ const ReviewPage = () => {
         )
       }
       <Spacer y={2} />
-      <RockButton text="Close" />
+      <RockButton
+        text="Close"
+        onClick={
+          () => {
+            Router.push("/")
+          }
+        }
+      />
     </Layout>
   )
 };
