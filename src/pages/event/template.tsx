@@ -1,15 +1,20 @@
 import { Container } from "@nextui-org/react";
 import { Layout } from "src/components/Layout/layout";
 
-const Login = () => {
+const Template = () => {
   return (
-    <Layout title="Home">
+    <Layout 
+      prevRoute={{
+        title: "Event",
+        href: "/event",
+      }}
+      title="Service Template">
       <Container>
-        Login with Line
+        hoge
       </Container>
     </Layout>
   );
 };
 
 // eslint-disable-next-line import/no-default-export
-export default Login;
+export default Template;

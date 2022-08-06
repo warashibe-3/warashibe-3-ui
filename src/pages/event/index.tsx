@@ -1,15 +1,15 @@
 import { Container } from "@nextui-org/react";
 import { Layout } from "src/components/Layout/layout";
 
-const Login = () => {
+const Event = () => {
   return (
-    <Layout title="Home">
+    <Layout title="Event">
       <Container>
-        Login with Line
+        hoge
       </Container>
     </Layout>
   );
 };
 
 // eslint-disable-next-line import/no-default-export
-export default Login;
+export default Event;
