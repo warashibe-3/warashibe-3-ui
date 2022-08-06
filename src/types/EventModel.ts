@@ -1,4 +1,6 @@
 export interface EventModel {
-  title: string;
+  title?: string;
+  type?: string;
+  person?: number;
   isCompleted: boolean;
 }

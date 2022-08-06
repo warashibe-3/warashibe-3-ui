@@ -1,4 +1,4 @@
-import { Link,Row, Text } from "@nextui-org/react";
+import { Link, Row, Text } from "@nextui-org/react";
 import type { Route } from "src/types/Route";
 
 import styles from "./header.module.css";
