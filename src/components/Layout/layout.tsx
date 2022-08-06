@@ -7,8 +7,12 @@ import { Header } from "src/components/Header/header";
 import { PageNav } from "src/components/PageNav/pagenav";
 import type { Route } from "src/types/Route";
 
-export const Layout = (props: { children: ReactNode; prevRoute?: Route; title: string }) => {
-  const { children, prevRoute, title } = props;
+export const Layout: React.FC<{
+  children: ReactNode;
+  prevRoute?: Route;
+  title: string;
+  subRoute?: Route;
+}> = ({ children, prevRoute, title, subRoute: subRoute }) => {
   return (
     <>
       <Head>
@@ -17,7 +21,7 @@ export const Layout = (props: { children: ReactNode; prevRoute?: Route; title: s
       </Head>
       <Container sm>
         {prevRoute ? <PageNav prevRoute={prevRoute} /> : <span />}
-        <Header title={title} />
+        <Header title={title} subRoute={subRoute || null}/>
         <main>{children}</main>
         <Footer />
       </Container>

@@ -3,13 +3,13 @@ import type { EventModel } from "src/types/EventModel";
 
 import styles from "./eventcard.module.css";
 
-const StatusText: React.FC<{isCompleted: boolean}> = ({isCompleted}) => {
+const StatusText: React.FC<{ isCompleted: boolean }> = ({ isCompleted }) => {
   if (isCompleted) {
-    return <Text className={styles.completed}>Completed</Text>
+    return <Text className={styles.completed}>Completed</Text>;
   } else {
-    return <Text className={styles.progress}>Progress</Text>
+    return <Text className={styles.progress}>In Progress</Text>;
   }
-}
+};
 
 export const EventCard: React.FC<{ event: EventModel }> = ({ event }) => {
   const { title, isCompleted } = event;
