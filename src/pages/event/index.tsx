@@ -1,15 +1,31 @@
-import { Container } from "@nextui-org/react";
+import { EventCard } from "src/components/EventCard/eventcard";
 import { Layout } from "src/components/Layout/layout";
 
-const Event = () => {
+// stub data
+const eventList = [
+  {
+    title: "Sunday Evening BBQ",
+    isCompleted: true,
+  },
+  {
+    title: "Golden Week Karaoke",
+    isCompleted: false,
+  },
+  {
+    title: "Obon River Side BBQ",
+    isCompleted: false,
+  },
+];
+
+const EventPage = () => {
   return (
-    <Layout title="Event">
-      <Container>
-        hoge
-      </Container>
+    <Layout title="Events">
+      {eventList.map((event, index) => {
+        return <EventCard key={index} event={event} />;
+      })}
     </Layout>
   );
 };
 
 // eslint-disable-next-line import/no-default-export
-export default Event;
+export default EventPage;

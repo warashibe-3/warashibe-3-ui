@@ -3,15 +3,14 @@ import { Layout } from "src/components/Layout/layout";
 
 const Template = () => {
   return (
-    <Layout 
+    <Layout
       prevRoute={{
         title: "Event",
         href: "/event",
       }}
-      title="Service Template">
-      <Container>
-        hoge
-      </Container>
+      title="Service Template"
+    >
+      <Container>hoge</Container>
     </Layout>
   );
 };

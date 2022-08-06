@@ -13,11 +13,11 @@ export const PageNav: React.FC<PageNavProps> = ({ prevRoute }) => {
   return (
     <Container display="flex" justify="space-between" css={{ py: "12%" }} gap={0}>
       <NextLink href={prevRoute.href}>
-          <a className={styles.navLink}>
-            <Icon icon="ep:arrow-left-bold" />
-            <span className={styles.title}>{prevRoute.title}</span>
-          </a>
-        </NextLink>
+        <a className={styles.navLink}>
+          <Icon icon="ep:arrow-left-bold" />
+          <span className={styles.title}>{prevRoute.title}</span>
+        </a>
+      </NextLink>
     </Container>
   );
 };
