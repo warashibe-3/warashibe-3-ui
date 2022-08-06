@@ -21,7 +21,7 @@ export const Layout: React.FC<{
       </Head>
       <Container sm>
         {prevRoute ? <PageNav prevRoute={prevRoute} /> : <span />}
-        <Header title={title} subRoute={subRoute || null}/>
+        <Header title={title} subRoute={subRoute || null} />
         <main>{children}</main>
         <Footer />
       </Container>
