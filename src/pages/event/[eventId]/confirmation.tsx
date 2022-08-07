@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { BaseLayout as Layout } from "src/components/BaseLayout/baselayout";
 import { RockButton } from "src/components/RockButton/rockbutton";
 import { TaskUserCard } from "src/components/TaskUserCard/taskusercard";
-import type { Member } from "src/pages/lib/fetchMember";
+import type { Member } from "src/lib/fetchMember";
 
 interface Task {
   username: string;
@@ -30,12 +30,8 @@ const convertTaskToIcon = (taskId: number) => {
 };
 
 const fetchMember = async (id: string): Promise<Member[]> => {
-  console.info(id);
   const res = await axios(`/api/event/${id}/member`);
-
-  return res.data.map((member: Member) => {
-    return member;
-  });
+  return res.data;
 };
 
 const EventConfirmationPage = () => {
@@ -55,7 +51,6 @@ const EventConfirmationPage = () => {
       });
       setTasks(tasks);
     };
-    // console.info(eventId);
     if (eventId) {
       fetchAndSetMember(eventId as string);
     }

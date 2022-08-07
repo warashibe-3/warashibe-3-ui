@@ -1,5 +1,7 @@
 import axios from "axios";
 
+import { host } from "./ApiSetting";
+
 export interface Member {
   snsId: string;
   userName: string;
@@ -8,7 +10,6 @@ export interface Member {
   specialist: string;
 }
 
-const host = "ec2-54-168-156-21.ap-northeast-1.compute.amazonaws.com:8080";
 const basePath = "/events/tasks/all_assigned/snsid_aaaaa";
 
 // eslint-disable-next-line import/no-anonymous-default-export, import/no-default-export
