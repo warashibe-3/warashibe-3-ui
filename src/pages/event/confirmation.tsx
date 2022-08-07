@@ -18,7 +18,7 @@ const userTaskList = [
   },
   {
     username: "User C",
-    task: "fa6-regular:calendar-check",
+    task: "fa6-solid:calendar-day",
     type: "Participant",
   },
   {
