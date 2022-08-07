@@ -1,4 +1,4 @@
-import { Grid, Loading } from "@nextui-org/react";
+import { Button, Grid, Loading, Modal, Row, Text } from "@nextui-org/react";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { BaseLayout as Layout } from "src/components/BaseLayout/baselayout";
@@ -42,12 +42,14 @@ const EventConfirmationPage = () => {
   const [taskId, setTaskId] = useState(null as number | null);
   const router = useRouter();
 
+  const [isVisible, setVisible] = useState(false);
+
   const onClickOption = async (id: number) => {
     setTaskId(id);
 
     await sleep(1000);
 
-    return router.push("/event/");
+    setVisible(true);
   };
 
   return (
@@ -76,9 +78,27 @@ const EventConfirmationPage = () => {
             );
           })}
         </Grid.Container>
-      ) : (
+      ) : !isVisible ? (
         <Loading css={{ margin: "auto", display: "flex", alignItems: "center" }}>Loading</Loading>
-      )}
+      ) : null}
+
+      <Modal closeButton aria-labelledby="modal-title" open={isVisible}>
+        <Modal.Body>
+          <Row justify="space-between">
+            <Text size={14}>Submit your choise!</Text>
+          </Row>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            auto
+            onClick={() => {
+              return router.push("/event/");
+            }}
+          >
+            Return events
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </Layout>
   );
 };
