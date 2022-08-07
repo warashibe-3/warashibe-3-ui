@@ -31,7 +31,14 @@ const taskData = [
 
 const EventConfirmationPage = () => {
   return (
-    <Layout title="Event" pageTitle="Event">
+    <Layout
+      title="Event"
+      pageTitle="Event"
+      prevRoute={{
+        title: "Home",
+        href: "/event",
+      }}
+    >
       <Card variant="bordered">
         <Card.Body>
           <Grid.Container>

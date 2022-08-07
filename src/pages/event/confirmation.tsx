@@ -30,7 +30,14 @@ const userTaskList = [
 
 const EventConfirmationPage = () => {
   return (
-    <Layout title="Confirmation" pageTitle="Confirmation">
+    <Layout
+      title="Confirmation"
+      pageTitle="Confirmation"
+      prevRoute={{
+        title: "Home",
+        href: "/event",
+      }}
+    >
       <Grid.Container>
         {userTaskList.map((task, index) => {
           return (

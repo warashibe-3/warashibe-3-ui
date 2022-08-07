@@ -117,7 +117,7 @@ const NewEvent = () => {
               <RockButton
                 text="Finish"
                 onClick={() => {
-                  return router.push("/event");
+                  return router.push("/event/assignment");
                 }}
               />
             ) : (

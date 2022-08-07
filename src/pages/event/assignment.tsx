@@ -30,7 +30,14 @@ const taskData = [
 
 const EventConfirmationPage = () => {
   return (
-    <Layout title="Event" pageTitle="Select Steps that you are not interested in doing">
+    <Layout
+      title="Event"
+      pageTitle="Select Steps that you are not interested in doing"
+      prevRoute={{
+        title: "Back",
+        href: "/event/new",
+      }}
+    >
       {
         taskData.map(
           (task, index) => {
