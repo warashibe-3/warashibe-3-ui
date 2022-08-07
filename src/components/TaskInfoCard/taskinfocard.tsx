@@ -7,7 +7,11 @@ export const TaskInfoCard = (
   { icon, title, description }: { icon: string, title: string, description: string }
 ) => {
   return (
-    <Card variant="flat" className={styles.item}>
+    <Card
+      variant="flat"
+      isPressable
+      className={styles.item}
+    >
       <Card.Body>
         <Icon icon={icon} fontSize={"calc(120px + 10 * (100vw - 800px)/100)"} className={styles.icon} />
       </Card.Body>
