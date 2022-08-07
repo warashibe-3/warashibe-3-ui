@@ -26,7 +26,14 @@ const userList = [
 
 const ReviewPage = () => {
   return (
-    <Layout title="Review" pageTitle="Review">
+    <Layout
+      title="Review"
+      pageTitle="Review"
+      prevRoute={{
+        title: "Event",
+        href: "/event",
+      }}
+    >
       <Grid.Container>
         {userList.map((user, index) => {
           return <ReviewCard username={user.name} profile={user.profile} key={index} />;

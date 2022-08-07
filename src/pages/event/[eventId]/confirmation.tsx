@@ -57,7 +57,14 @@ const EventConfirmationPage = () => {
   }, [router, eventId]);
 
   return (
-    <Layout title="Confirmation" pageTitle="Confirmation">
+    <Layout
+      title="Confirmation"
+      pageTitle="Confirmation"
+      prevRoute={{
+        title: "Event",
+        href: "/event",
+      }}
+    >
       {tasks ? (
         <>
           <Grid.Container>

@@ -9,7 +9,14 @@ const TokenPage = () => {
   const { eventId } = router.query;
 
   return (
-    <Layout title="Token" pageTitle="Token">
+    <Layout
+      title="Token"
+      pageTitle="Token"
+      prevRoute={{
+        title: "Event",
+        href: "/event",
+      }}
+    >
       <Grid direction="column" alignItems="center">
         <Grid>
           <Spacer y={15} />
