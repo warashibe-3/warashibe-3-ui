@@ -1,5 +1,5 @@
 import Router from 'next/router'
-import { Spacer, Grid } from "@nextui-org/react"
+import { Card, Spacer, Grid } from "@nextui-org/react"
 
 import { BaseLayout as Layout } from "src/components/BaseLayout/baselayout";
 import { TaskCard } from "src/components/TaskCard/taskcard";
@@ -32,20 +32,24 @@ const taskData = [
 const EventConfirmationPage = () => {
   return (
     <Layout title="Event" pageTitle="Event">
-      <Grid.Container css={{ margin: "auto" }}>
-        {
-          userData.map(
-            (user, index) => {
-              return (
-                <Grid key={index} xs={6} direction="column">
-                  <UserCard profile={user.profile} username={user.user} key={index} />
-                </Grid>
+      <Card variant="bordered">
+        <Card.Body>
+          <Grid.Container css={{ margin: "auto" }}>
+            {
+              userData.map(
+                (user, index) => {
+                  return (
+                    <Grid key={index} xs={6} direction="column">
+                      <UserCard profile={user.profile} username={user.user} key={index} />
+                    </Grid>
+                  )
+                }
               )
             }
-          )
-        }
-      </Grid.Container>
-      <Spacer y={2} />
+          </Grid.Container>
+        </Card.Body>
+      </Card>
+      <Spacer y={1} />
       <Grid.Container>
         {
           taskData.map(
