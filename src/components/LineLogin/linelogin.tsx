@@ -7,7 +7,10 @@ interface LineLogin {
 }
 
 const fetchLoginUrl = async (): Promise<LineLogin> => {
-  const {data} = await axios('/api/v1/line-login/login')
+  const params = {
+    redirect: `${location.origin}/auth`
+  }
+  const {data} = await axios.get('/api/v1/line-login/login', {params})
   return {
     location: data.location,
     sessionId: data.session_id,
