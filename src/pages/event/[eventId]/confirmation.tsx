@@ -42,7 +42,7 @@ const EventConfirmationPage = () => {
   const router = useRouter();
   const { eventId } = router.query;
 
-  const [tasks, setTasks] = useState([] as Task[]);
+  const [tasks, setTasks] = useState(null as Task[] | null);
 
   useEffect(() => {
     const fetchAndSetMember = async (eventId: string) => {
@@ -63,7 +63,7 @@ const EventConfirmationPage = () => {
 
   return (
     <Layout title="Confirmation" pageTitle="Confirmation">
-      {eventId ? (
+      {tasks ? (
         <>
           <Grid.Container>
             {tasks.map((task, index) => {
