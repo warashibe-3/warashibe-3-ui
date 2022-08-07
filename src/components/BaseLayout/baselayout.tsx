@@ -1,10 +1,9 @@
 import { Container } from "@nextui-org/react";
 import Head from "next/head";
 import type { ReactNode } from "react";
-import type { Route } from "src/types/Route";
-
 import { Header } from "src/components/Header/header";
 import { PageNav } from "src/components/PageNav/pagenav";
+import type { Route } from "src/types/Route";
 
 export const BaseLayout: React.FC<{
   children: ReactNode;

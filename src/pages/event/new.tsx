@@ -2,6 +2,7 @@ import { Button, Grid, Input, Textarea } from "@nextui-org/react";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { Layout } from "src/components/Layout/layout";
+import { RockButton } from "src/components/RockButton/rockbutton";
 import type { EventModel } from "src/types/EventModel";
 
 const TemplateStub = ["BBQ", "Karaoke", "Picnic", "More BBQ XD"];
@@ -66,6 +67,7 @@ const TitleInput: React.FC<{
 const NewEvent = () => {
   const [event, setEvent] = useState({
     isCompleted: false,
+    isReviewed: false,
   } as EventModel);
 
   const updateEventType = (type: string) => {
@@ -112,22 +114,14 @@ const NewEvent = () => {
           </Grid>
           <Grid>
             {event.person && event.title ? (
-              <Button
-                bordered
-                color="secondary"
-                ghost
-                size="xl"
-                flat
+              <RockButton
+                text="Finish"
                 onClick={() => {
                   return router.push("/event");
                 }}
-              >
-                Finish
-              </Button>
+              />
             ) : (
-              <Button bordered color="secondary" ghost size="xl" flat disabled>
-                Finish
-              </Button>
+              <RockButton text="Finish" isDisabled={true} />
             )}
           </Grid>
         </Grid.Container>
