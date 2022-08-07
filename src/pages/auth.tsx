@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { Layout } from "src/components/Layout/layout";
 
 
-interface LineLoginAuth {
+export interface LineLoginAuth {
   status: number
   snsId: string
   name: string
