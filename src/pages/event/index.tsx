@@ -1,29 +1,32 @@
-import { Grid } from "@nextui-org/react";
+import { Grid, Loading } from "@nextui-org/react";
+import axios from "axios";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { EventCard } from "src/components/EventCard/eventcard";
 import { Layout } from "src/components/Layout/layout";
 import { RockButton } from "src/components/RockButton/rockbutton";
+import type { EventModel } from "src/types/EventModel";
 
-// stub data
-const eventList = [
-  {
-    title: "Sunday Evening BBQ",
-    isCompleted: false,
-    isReviewed: false,
-  },
-  {
-    title: "Golden Week Karaoke",
-    isCompleted: true,
-    isReviewed: false,
-  },
-  {
-    title: "Obon River Side BBQ",
-    isCompleted: true,
-    isReviewed: true,
-  },
-];
+const fetchEvent = async (id: string): Promise<EventModel[]> => {
+  const res = await axios(`/api/event/list?userId=${id}`);
+  return res.data;
+};
+
+const userId = "aaaa";
 
 const EventPage = () => {
+  const [events, setEvent] = useState(null as EventModel[] | null);
+
+  useEffect(() => {
+    const fetchAndSetEvent = async (userId: string) => {
+      const events = await fetchEvent(userId);
+      setEvent(events);
+    };
+    if (userId) {
+      fetchAndSetEvent(userId as string);
+    }
+  }, []);
+
   return (
     <Layout
       title="Events"
@@ -32,9 +35,13 @@ const EventPage = () => {
         href: "/profile",
       }}
     >
-      {eventList.map((event, index) => {
-        return <EventCard key={index} event={{ ...event, id: `${index}` }} />;
-      })}
+      {events ? (
+        events.map((event, index) => {
+          return <EventCard key={index} event={{ ...event, id: `${index}` }} />;
+        })
+      ) : (
+        <Loading css={{ margin: "auto", display: "flex", alignItems: "center" }}>Loading</Loading>
+      )}
       <Grid.Container gap={2} justify="center" direction="column" alignItems="center">
         <Grid>
           <Link href="/event/join">

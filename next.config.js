@@ -8,7 +8,7 @@ const rewrites = () => {
       destination: `${pythonBase}/api/v1/:path*`,
     },
     {
-      source: "/api/:path*",
+      source: "/api/v1/:path*",
       destination: `${javaBase}/:path*`,
     },
     {
