@@ -1,4 +1,4 @@
-import { Card, Grid, Spacer } from "@nextui-org/react";
+import { Card, Grid, Spacer, Text } from "@nextui-org/react";
 import Router from "next/router";
 import { BaseLayout as Layout } from "src/components/BaseLayout/baselayout";
 import { RockButton } from "src/components/RockButton/rockbutton";
@@ -20,6 +20,8 @@ const userData = [
     profile: "https://i.pravatar.cc/150?u=a04258114e29026702d",
   },
 ];
+
+const code = "QW4HD-DQCRG-6-GJ-RK";
 
 const taskData = ["fa6-regular:calendar-check", "fa:shopping-bag", "fa6-regular:calendar-check", "fa:money"];
 
@@ -56,9 +58,11 @@ const EventConfirmationPage = () => {
           );
         })}
       </Grid.Container>
-      <Spacer y={2} />
+      <Spacer y={1} />
+      <Text blockquote className="code">Code: {code}</Text>
+      <Spacer y={1} />
       <RockButton
-        text="Create NFT"
+        text="Assign Tasks"
         onClick={() => {
           Router.push("/event/0/confirmation");
         }}
