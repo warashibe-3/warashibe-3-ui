@@ -1,13 +1,13 @@
 const rewrites = () => {
-  const base = "http://ec2-54-168-156-21.ap-northeast-1.compute.amazonaws.com:8001";
+  const pythonBase = "http://ec2-54-168-156-21.ap-northeast-1.compute.amazonaws.com:8001";
   return [
     {
       source: "/api/v1/:path*",
-      destination: `${base}/api/v1/:path*`,
+      destination: `${pythonBase}/api/v1/:path*`,
     },
     {
       source: "/hello",
-      destination: `${base}/hello`,
+      destination: `${pythonBase}/hello`,
     },
   ];
 };
