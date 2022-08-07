@@ -1,20 +1,14 @@
+import { Icon } from "@iconify/react";
 import { Card } from "@nextui-org/react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { IconProp } from "@fortawesome/fontawesome-svg-core";
 
-import styles from './taskcard.module.css'
+import styles from "./taskcard.module.css";
 
-export const TaskCard = (
-  { icon }: { icon: IconProp }
-) => {
+export const TaskCard = ({ icon }: { icon: string }) => {
   return (
-    <Card
-      variant="flat"
-      className={styles.task}
-    >
+    <Card variant="flat" className={styles.task}>
       <Card.Body>
-        <FontAwesomeIcon icon={icon} size={"3x"} className={styles.icon} />
+        <Icon icon={icon} fontSize={"calc(70px + 10 * (100vw - 800px)/100)"} className={styles.icon} />
       </Card.Body>
     </Card>
-  )
+  );
 };

@@ -4,3 +4,11 @@
   border-radius: 4px;
   background-color: black;
 }
+
+.disabled {
+  margin: auto;
+  display: block;
+  color: white;
+  border-radius: 4px;
+  background-color: rgb(145, 145, 145);
+}

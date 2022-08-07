@@ -1,11 +1,7 @@
-import { useState } from 'react';
-import { Text } from '@nextui-org/react'
+import { Icon } from "@iconify/react";
+import { useState } from "react";
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faStar as faFullStar } from '@fortawesome/free-solid-svg-icons'
-import { faStar } from '@fortawesome/free-regular-svg-icons'
-
-import styles from './ratingstar.module.css'
+import styles from "./ratingstar.module.css";
 
 export const RatingStar = () => {
   const [rating, setRating] = useState(0);
@@ -18,9 +14,11 @@ export const RatingStar = () => {
             type="button"
             key={index}
             className={styles.button}
-            onClick={() => setRating(index)}
+            onClick={() => {
+              return setRating(index);
+            }}
           >
-            <FontAwesomeIcon icon={index <= (rating) ? faFullStar : faStar} size="2x" />
+            <Icon icon={index <= rating ? "fa:star" : "bi:star"} fontSize={"2x"} />
           </button>
         );
       })}
