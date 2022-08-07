@@ -79,9 +79,9 @@ const EventConfirmationPage = () => {
           </Grid.Container>
           <Spacer y={2} />
           <RockButton
-            text="Create NFT"
+            text="Confirm"
             onClick={() => {
-              Router.push(`/event/${eventId}/token`);
+              Router.reload();
             }}
           />
           <Spacer y={2} />

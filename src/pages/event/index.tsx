@@ -47,14 +47,6 @@ const EventPage = () => {
       <Grid.Container gap={2} justify="center" direction="column" alignItems="center">
         <Grid>
           <RockButton
-            text="Insert Event Code"
-            onClick={() => {
-              router.push("/event/join");
-            }}
-          />
-        </Grid>
-        <Grid>
-          <RockButton
             text="Create New Event"
             onClick={() => {
               router.push("/event/new");
