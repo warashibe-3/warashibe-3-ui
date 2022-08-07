@@ -1,13 +1,20 @@
-import { Container } from "@nextui-org/react";
+import { Container, Spacer } from "@nextui-org/react";
+import { HeroLogo } from "src/components/HeroLogo/herologo";
 import { Layout } from "src/components/Layout/layout";
 import { LineLogin, LineSignup } from "src/components/LineLogin/linelogin";
 
 const Login = () => {
   return (
-    <Layout title="Warashibe 3.0">
+    <Layout title="">
       <Container>
+        <Spacer y={6} />
+        <HeroLogo />
+        <Spacer y={4} />
+
         <LineLogin text="Login with Line" />
         <LineSignup text="Signup with Line" />
+
+        <Spacer y={4} />
       </Container>
     </Layout>
   );
