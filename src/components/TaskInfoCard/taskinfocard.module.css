@@ -1,0 +1,25 @@
+.icon {
+  margin: auto;
+}
+
+.title {
+  margin: auto;
+}
+
+.description {
+  margin: auto;
+  text-align: center;
+}
+
+.header {
+  padding: 0;
+}
+
+.footer {
+  padding: 20px;
+  margin: auto;
+}
+
+.item {
+  margin-bottom: 10px;
+}

@@ -60,7 +60,7 @@ const EventConfirmationPage = () => {
       <RockButton
         text="Create NFT"
         onClick={() => {
-          Router.push("/event/confirmation");
+          Router.push("/event/0/confirmation");
         }}
       />
       <Spacer y={2} />

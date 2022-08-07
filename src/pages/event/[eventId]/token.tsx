@@ -19,10 +19,10 @@ const TokenPage = () => {
     >
       <Grid direction="column" alignItems="center">
         <Grid>
-          <Spacer y={15} />
+          <Spacer y={5} />
           <TokenHash token="ThiSISaTokeNvAlUEAndItsvEryCool" />
         </Grid>
-        <Spacer y={5} />
+        <Spacer y={3} />
         <Grid>
           <RockButton
             text="Review"
