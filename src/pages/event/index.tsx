@@ -12,17 +12,19 @@ const fetchEvent = async (id: string): Promise<EventModel[]> => {
   return res.data;
 };
 
-const userId = "aaaa";
-
 const EventPage = () => {
   const router = useRouter();
 
   const [events, setEvent] = useState(null as EventModel[] | null);
 
   useEffect(() => {
+    const userId = localStorage.getItem("snsId");
+
     const fetchAndSetEvent = async (userId: string) => {
       const events = await fetchEvent(userId);
-      setEvent(events);
+      if (events) {
+        setEvent(events);
+      }
     };
     if (userId) {
       fetchAndSetEvent(userId as string);

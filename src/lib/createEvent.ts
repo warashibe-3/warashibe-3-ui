@@ -13,7 +13,12 @@ export interface EventResponse {
 const basePath = "/events";
 
 // eslint-disable-next-line import/no-anonymous-default-export, import/no-default-export
-export default async (userId: string): Promise<EventModel[]> => {
-  const res = await axios.post(`http://${host}${basePath}/${userId}`);
-  return res.data;
+export default async (snsId: string, event: EventModel): Promise<EventModel> => {
+  const res = await axios.post(`http://${host}${basePath}`, {
+    snsId,
+    valueChainId: 1,
+    eventName: event.title,
+    participants: event.person,
+  });
+  return res.data.eventId;
 };

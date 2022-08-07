@@ -8,10 +8,15 @@ import type { EventModel } from "src/types/EventModel";
 
 const TemplateStub = ["BBQ", "Karaoke", "Picnic", "More BBQ XD"];
 
-// const createEvent = async (id: string): Promise<EventModel[]> => {
-//   const res = await axios.post(`/api/event/list?userId=${id}`);
-//   return res.data;
-// };
+const createEvent = async (event: EventModel): Promise<EventModel> => {
+  const res = await axios.post(`/api/event/create`, {
+    snsId: localStorage.getItem("snsId"),
+    type: event.type,
+    title: event.title,
+    person: event.person,
+  });
+  return { ...event, id: res.data.eventId };
+};
 
 const TemplateChoise: React.FC<{
   update: (event: any) => void;
@@ -121,17 +126,21 @@ const NewEvent = () => {
           <Grid>
             {event.person && event.title ? (
               <>
-                <Text>Invite URL</Text>
-                <Textarea
-                  bordered
-                  color="secondary"
-                  value={`https://warashibe-3-ui.vercel.app/event/${10}/assignment`}
-                  css={{ margin: "10px 0px" }}
-                />
+                {event.id ? (
+                  <>
+                    <Text>Invite URL</Text>
+                    <Textarea
+                      bordered
+                      color="secondary"
+                      value={`https://warashibe-3-ui.vercel.app/event/${event.id}/assignment`}
+                      css={{ margin: "10px 0px" }}
+                    />
+                  </>
+                ) : null}
                 <RockButton
                   text="Finish"
-                  onClick={() => {
-                    return router.push("/event/");
+                  onClick={async () => {
+                    setEvent(await createEvent(event));
                   }}
                 />
               </>
