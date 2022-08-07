@@ -30,13 +30,13 @@ const mintToken = async (): Promise<TokenMint> => {
 const TokenPage = () => {
   const router = useRouter();
   const { eventId } = router.query;
-  const [token, setToken] = useState("ThiSISaTokeNvAlUEAndItsvEryCool");
+  const [token, setToken] = useState("Creating...");
 
   useEffect(() => {
     mintToken().then((ret: TokenMint) => {
       setToken(ret.txHash)
     })
-  }, []);
+  });
 
   return (
     <Layout
