@@ -72,7 +72,7 @@ const EventConfirmationPage = () => {
       </Grid.Container>
       <Spacer y={2} />
       <RockButton
-        text="Create NFT"
+        text="Assign Users"
         onClick={
           () => {
             Router.push("/event/confirmation")
