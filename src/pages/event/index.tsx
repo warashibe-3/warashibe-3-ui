@@ -1,6 +1,6 @@
 import { Grid, Loading } from "@nextui-org/react";
 import axios from "axios";
-import Link from "next/link";
+import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { EventCard } from "src/components/EventCard/eventcard";
 import { Layout } from "src/components/Layout/layout";
@@ -15,6 +15,8 @@ const fetchEvent = async (id: string): Promise<EventModel[]> => {
 const userId = "aaaa";
 
 const EventPage = () => {
+  const router = useRouter();
+
   const [events, setEvent] = useState(null as EventModel[] | null);
 
   useEffect(() => {
@@ -44,14 +46,20 @@ const EventPage = () => {
       )}
       <Grid.Container gap={2} justify="center" direction="column" alignItems="center">
         <Grid>
-          <Link href="/event/join">
-            <RockButton text="Insert Event Code" />
-          </Link>
+          <RockButton
+            text="Insert Event Code"
+            onClick={() => {
+              router.push("/event/join");
+            }}
+          />
         </Grid>
         <Grid>
-          <Link href="/event/new">
-            <RockButton text="Create New Event" />
-          </Link>
+          <RockButton
+            text="Create New Event"
+            onClick={() => {
+              router.push("/event/new");
+            }}
+          />
         </Grid>
       </Grid.Container>
     </Layout>
