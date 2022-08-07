@@ -1,21 +1,25 @@
-import { Button, Grid } from "@nextui-org/react";
+import { Grid } from "@nextui-org/react";
 import Link from "next/link";
 import { EventCard } from "src/components/EventCard/eventcard";
 import { Layout } from "src/components/Layout/layout";
+import { RockButton } from "src/components/RockButton/rockbutton";
 
 // stub data
 const eventList = [
   {
     title: "Sunday Evening BBQ",
     isCompleted: false,
+    isReviewed: false,
   },
   {
     title: "Golden Week Karaoke",
     isCompleted: true,
+    isReviewed: false,
   },
   {
     title: "Obon River Side BBQ",
     isCompleted: true,
+    isReviewed: true,
   },
 ];
 
@@ -29,21 +33,17 @@ const EventPage = () => {
       }}
     >
       {eventList.map((event, index) => {
-        return <EventCard key={index} event={event} />;
+        return <EventCard key={index} event={{ ...event, id: `${index}` }} />;
       })}
       <Grid.Container gap={2} justify="center" direction="column" alignItems="center">
         <Grid>
           <Link href="/event/join">
-            <Button bordered color="primary" auto ghost size="xl" flat>
-              Insert Event Code
-            </Button>
+            <RockButton text="Insert Event Code" />
           </Link>
         </Grid>
         <Grid>
           <Link href="/event/new">
-            <Button bordered color="primary" auto ghost size="xl" flat>
-              Create New Event
-            </Button>
+            <RockButton text="Create New Event" />
           </Link>
         </Grid>
       </Grid.Container>
