@@ -4,11 +4,15 @@ const rewrites = () => {
   const pythonBase = `http://${host}:8001`;
   return [
     {
-      source: "/api/v1/:path*",
-      destination: `${pythonBase}/api/v1/:path*`,
+      source: "/api/v1/line-login/:path*",
+      destination: `${pythonBase}/api/v1/line-login/:path*`,
     },
     {
-      source: "/api/:path*",
+      source: "/api/v1/blockchain/:path*",
+      destination: `${pythonBase}/api/v1/blockchain/:path*`,
+    },
+    {
+      source: "/api/v1/:path*",
       destination: `${javaBase}/:path*`,
     },
     {
