@@ -1,4 +1,4 @@
-import { Button, Grid, Input, Textarea } from "@nextui-org/react";
+import { Button, Grid, Input, Text, Textarea } from "@nextui-org/react";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { Layout } from "src/components/Layout/layout";
@@ -114,12 +114,21 @@ const NewEvent = () => {
           </Grid>
           <Grid>
             {event.person && event.title ? (
-              <RockButton
-                text="Finish"
-                onClick={() => {
-                  return router.push("/event/assignment");
-                }}
-              />
+              <>
+                <Text>Invite URL</Text>
+                <Textarea
+                  bordered
+                  color="secondary"
+                  value={`https://warashibe-3-ui.vercel.app/event/${10}/assignment`}
+                  css={{ margin: "10px 0px" }}
+                />
+                <RockButton
+                  text="Finish"
+                  onClick={() => {
+                    return router.push("/event/");
+                  }}
+                />
+              </>
             ) : (
               <RockButton text="Finish" isDisabled={true} />
             )}
