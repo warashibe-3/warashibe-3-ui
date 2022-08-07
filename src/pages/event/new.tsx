@@ -1,6 +1,5 @@
 import { Button, Grid, Input, Text, Textarea } from "@nextui-org/react";
 import axios from "axios";
-import { useRouter } from "next/router";
 import { useState } from "react";
 import { Layout } from "src/components/Layout/layout";
 import { RockButton } from "src/components/RockButton/rockbutton";
@@ -101,8 +100,6 @@ const NewEvent = () => {
       title,
     });
   };
-
-  const router = useRouter();
 
   return (
     <Layout
