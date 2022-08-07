@@ -30,7 +30,7 @@ const userTaskList = [
 
 const EventConfirmationPage = () => {
   return (
-    <Layout title="Confirmation" pageTitle="Review">
+    <Layout title="Confirmation" pageTitle="Confirmation">
       <Grid.Container>
         {userTaskList.map((task, index) => {
           return (
