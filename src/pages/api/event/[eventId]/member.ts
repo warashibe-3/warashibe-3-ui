@@ -1,23 +1,5 @@
-import got from "got";
 import type { NextApiRequest, NextApiResponse } from "next";
-
-interface Member {
-  snsId: string;
-  userName: string;
-  taskId: string;
-  taskName: string;
-}
-
-const host = "ec2-54-168-156-21.ap-northeast-1.compute.amazonaws.com:8080";
-const basePath = "/events/tasks/all_assigned/snsid_aaaaa";
-
-const fetchMember = async (eventId: string): Promise<Member[]> => {
-  const { allAssignedList } = await got(`http://${host}${basePath}/${eventId}`).json();
-
-  return allAssignedList.map((member: Member) => {
-    return member;
-  });
-};
+import fetchMember from "src/pages/lib/fetchMember";
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default async (req: NextApiRequest, res: NextApiResponse) => {
