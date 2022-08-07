@@ -18,11 +18,11 @@ const fetchLoginUrl = async (): Promise<LineLogin> => {
   };
 };
 
-const lineLogin = async (): Promise<string> => {
+const lineLogin = async (): Promise<string | null> => {
   const { sessionId, location } = await fetchLoginUrl();
   localStorage.setItem("sessionId", sessionId);
   window.location.href = location;
-  return sessionId;
+  return localStorage.getItem("snsId");
 };
 
 const createUser = async (snsId: string): Promise<any> => {
@@ -40,7 +40,9 @@ export const LineSignup: React.FC<{
           text={text}
           onClick={async () => {
             const snsId = await lineLogin();
-            await createUser(snsId);
+            if (snsId) {
+              await createUser(snsId);
+            }
           }}
         />
       </Container>
