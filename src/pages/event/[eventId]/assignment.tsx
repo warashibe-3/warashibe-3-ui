@@ -1,4 +1,5 @@
 import { Button, Grid, Loading, Modal, Row, Text } from "@nextui-org/react";
+import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { BaseLayout as Layout } from "src/components/BaseLayout/baselayout";
@@ -32,10 +33,18 @@ const taskData = [
   },
 ];
 
-const sleep = (ms: number) => {
-  return new Promise((resolve) => {
-    return setTimeout(resolve, ms);
+// const sleep = (ms: number) => {
+//   return new Promise((resolve) => {
+//     return setTimeout(resolve, ms);
+//   });
+// };
+
+const joinMember = async (snsId: string, eventId: string, taskId: number): Promise<any> => {
+  const res = await axios.post(`/api/event/${eventId}/join`, {
+    snsId,
+    taskId,
   });
+  return res.data;
 };
 
 const EventConfirmationPage = () => {
@@ -47,7 +56,7 @@ const EventConfirmationPage = () => {
   const onClickOption = async (id: number) => {
     setTaskId(id);
 
-    await sleep(1000);
+    await joinMember(localStorage.getItem("snsId") as string, router.query.eventId as string, id);
 
     setVisible(true);
   };

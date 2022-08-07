@@ -41,7 +41,7 @@ const EventPage = () => {
     >
       {events ? (
         events.map((event, index) => {
-          return <EventCard key={index} event={{ ...event, id: `${index}` }} />;
+          return <EventCard key={index} event={{ ...event, id: `${event.id}` }} />;
         })
       ) : (
         <Loading css={{ margin: "auto", display: "flex", alignItems: "center" }}>Loading</Loading>
