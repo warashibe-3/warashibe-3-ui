@@ -34,11 +34,11 @@ const CardUnit: React.FC<{ event: EventModel }> = ({ event }) => {
 };
 export const EventCard: React.FC<{ event: EventModel }> = ({ event }) => {
   const { isCompleted, isReviewed } = event;
-  const url = isCompleted ? (isReviewed ? null : "/event/review") : "/event/confirmation";
+  const path = isCompleted ? (isReviewed ? null : "/review") : "/confirmation";
   return (
     <div className={styles.space}>
-      {url ? (
-        <Link href={url + "?id=" + event.id}>
+      {path ? (
+        <Link href={"/event/" + event.id + path}>
           <a>
             <CardUnit event={event} />
           </a>

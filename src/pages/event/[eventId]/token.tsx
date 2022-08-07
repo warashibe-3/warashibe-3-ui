@@ -1,10 +1,13 @@
 import { Grid, Spacer } from "@nextui-org/react";
-import Router from "next/router";
+import Router, { useRouter } from "next/router";
 import { BaseLayout as Layout } from "src/components/BaseLayout/baselayout";
 import { RockButton } from "src/components/RockButton/rockbutton";
 import { TokenHash } from "src/components/TokenHash/tokenhash";
 
 const TokenPage = () => {
+  const router = useRouter();
+  const { eventId } = router.query;
+
   return (
     <Layout title="Token" pageTitle="Token">
       <Grid direction="column" alignItems="center">
@@ -17,7 +20,7 @@ const TokenPage = () => {
           <RockButton
             text="Review"
             onClick={() => {
-              Router.push("/event/review");
+              Router.push(`/event/${eventId}/review`);
             }}
           />
         </Grid>
