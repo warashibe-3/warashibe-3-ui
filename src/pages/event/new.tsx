@@ -1,4 +1,5 @@
 import { Button, Grid, Input, Text, Textarea } from "@nextui-org/react";
+import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
 import { Layout } from "src/components/Layout/layout";
@@ -6,6 +7,11 @@ import { RockButton } from "src/components/RockButton/rockbutton";
 import type { EventModel } from "src/types/EventModel";
 
 const TemplateStub = ["BBQ", "Karaoke", "Picnic", "More BBQ XD"];
+
+// const createEvent = async (id: string): Promise<EventModel[]> => {
+//   const res = await axios.post(`/api/event/list?userId=${id}`);
+//   return res.data;
+// };
 
 const TemplateChoise: React.FC<{
   update: (event: any) => void;
