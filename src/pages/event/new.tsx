@@ -136,13 +136,14 @@ const NewEvent = () => {
                       css={{ margin: "10px 0px" }}
                     />
                   </>
-                ) : null}
-                <RockButton
-                  text="Finish"
-                  onClick={async () => {
-                    setEvent(await createEvent(event));
-                  }}
-                />
+                ) : (
+                  <RockButton
+                    text="Finish"
+                    onClick={async () => {
+                      setEvent(await createEvent(event));
+                    }}
+                  />
+                )}
               </>
             ) : (
               <RockButton text="Finish" isDisabled={true} />
