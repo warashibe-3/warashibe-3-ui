@@ -34,7 +34,7 @@ const EventConfirmationPage = () => {
     <Layout title="Event" pageTitle="Event">
       <Card variant="bordered">
         <Card.Body>
-          <Grid.Container css={{ margin: "auto" }}>
+          <Grid.Container>
             {
               userData.map(
                 (user, index) => {
