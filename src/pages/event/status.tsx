@@ -25,7 +25,7 @@ const userData = [
 const taskData = [
   "fa6-regular:calendar-check",
   "fa:shopping-bag",
-  "fa6-regular:calendar-check",
+  "fa6-solid:calendar-day",
   "fa:money"
 ]
 
