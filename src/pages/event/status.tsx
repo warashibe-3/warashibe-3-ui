@@ -25,7 +25,14 @@ const taskData = ["fa6-regular:calendar-check", "fa:shopping-bag", "fa6-regular:
 
 const EventConfirmationPage = () => {
   return (
-    <Layout title="Event" pageTitle="Event">
+    <Layout
+      title="Event"
+      pageTitle="Event"
+      prevRoute={{
+        title: "Event",
+        href: "/event",
+      }}
+    >
       <Card variant="bordered">
         <Card.Body>
           <Grid.Container css={{ margin: "auto" }}>
