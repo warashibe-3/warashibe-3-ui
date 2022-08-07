@@ -82,7 +82,14 @@ const EventConfirmationPage = () => {
         <Loading css={{ margin: "auto", display: "flex", alignItems: "center" }}>Loading</Loading>
       ) : null}
 
-      <Modal closeButton aria-labelledby="modal-title" open={isVisible}>
+      <Modal
+        closeButton
+        aria-labelledby="modal-title"
+        open={isVisible}
+        onClose={() => {
+          return router.push("/event/");
+        }}
+      >
         <Modal.Body>
           <Row justify="space-between">
             <Text size={14}>Submit your choise!</Text>
