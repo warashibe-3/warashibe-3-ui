@@ -34,6 +34,11 @@ const fetchMember = async (id: string): Promise<Member[]> => {
   return res.data;
 };
 
+const confirmEvent = async (eventId: number): Promise<Member[]> => {
+  const res = await axios.post(`/api/event/confirm`, { eventId });
+  return res.data;
+};
+
 const EventConfirmationPage = () => {
   const router = useRouter();
   const { eventId } = router.query;
@@ -80,7 +85,8 @@ const EventConfirmationPage = () => {
           <Spacer y={2} />
           <RockButton
             text="Confirm"
-            onClick={() => {
+            onClick={async () => {
+              await confirmEvent(Number(eventId as string));
               Router.reload();
             }}
           />
